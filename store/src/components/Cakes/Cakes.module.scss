@@ -40,9 +40,9 @@
     }
 }
 span.activeCategory {
-    color: $red;
+    color: $accent;
     font-weight: 800;
-    border-bottom: 3px solid $red;
+    border-bottom: 3px solid $accent;
     transition: 0.2s ease-in;
     z-index: 1;
 }
@@ -100,7 +100,7 @@ span.activeCategory {
     margin: 100px auto 0;
     padding: 20px;
     h2 {
-        color: $red;
+        color: $accent;
         font-size: clamp(1.5rem, 2.5vw, 2.25rem);
         font-weight: 500;
         margin-bottom: 10px;
@@ -125,7 +125,7 @@ span.activeCategory {
         }
     }
     .goBackBtn {
-        @include buttons($red);
+        @include buttons($accent);
         width: 100px;
         font-size: clamp(0.7rem, 2.5vw, 1rem);
     }
@@ -217,7 +217,7 @@ span.activeCategory {
 }
 .buyNow {
     width: 130px;
-    @include buttons($red);
+    @include buttons($accent);
 }
 /* Cake Slide */
 .cakesSlide {
@@ -244,7 +244,7 @@ span.activeCategory {
     :global(.swiper-pagination-bullet-active) {
         color: $white;
         font-weight: 500;
-        background-color: $red !important;
+        background-color: $accent !important;
     }
     :global(.swiper-pagination) {
         position: relative;

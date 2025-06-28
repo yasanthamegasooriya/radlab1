@@ -21,11 +21,32 @@ const CakeDetails = () => {
   }, [displayCakeDetails, findCake])
 
   const [cakeImage, setCakeImage] = useState(0)
+  const [cartLoading, setCartLoading] = useState(false);
+  const [buyLoading, setBuyLoading] = useState(false);
+  const [cartSuccess, setCartSuccess] = useState(false);
+  const [buySuccess, setBuySuccess] = useState(false);
 
   const handleClickImage = (id) => {
     setCakeImage(id)
     console.log(id)
   }
+
+  const handleAddToCart = async (cake, label) => {
+    setCartLoading(true);
+    await onAddClick(cake, label);
+    setCartLoading(false);
+    setCartSuccess(true);
+    setTimeout(() => setCartSuccess(false), 1200);
+  };
+
+  const handleBuyNow = async (cake, label) => {
+    setBuyLoading(true);
+    await onAddClick(cake, label);
+    setBuyLoading(false);
+    setBuySuccess(true);
+    setTimeout(() => setBuySuccess(false), 1200);
+  };
+
   return (
     <>
     <div className={styles.cakeDetailsPage}>
@@ -65,8 +86,20 @@ const CakeDetails = () => {
                   <i className="fa-solid fa-plus fa-xs" onClick={increaseQty}></i>
                 </div>
               </div>
-              <button className={styles.addToCart} onClick={(e) => onAddClick(cake, e.target.innerText)}>Add to Cart</button>
-              <button className={styles.buyNow} onClick={(e) => onAddClick(cake, e.target.innerText)}>Buy Now</button>
+              <button
+                className={styles.addToCart}
+                onClick={() => handleAddToCart(cake, 'Add to Cart')}
+                disabled={cartLoading}
+              >
+                {cartLoading ? 'Adding...' : cartSuccess ? 'Added!' : <><i className="fa fa-cart-plus" style={{marginRight: 6}}></i>Add to Cart</>}
+              </button>
+              <button
+                className={styles.buyNow}
+                onClick={() => handleBuyNow(cake, 'Buy Now')}
+                disabled={buyLoading}
+              >
+                {buyLoading ? 'Processing...' : buySuccess ? 'Ready!' : <><i className="fa fa-bolt" style={{marginRight: 6}}></i>Buy Now</>}
+              </button>
               <h3>Details</h3>
               <ul>
                 { cake.details.description.map(desc => <li style={{listStylePosition: "inside"}} key={desc}>{desc}</li>) }

@@ -37,7 +37,7 @@
     p {
         cursor: pointer;
         &:hover {
-            color: $red;
+            color: $accent;
         }
     }
 }
@@ -53,14 +53,14 @@
 }
 .socialLinks {
     a, a:visited, a:hover, a:active {
-        color: $red;
+        color: $accent;
     }
     a:not(:last-of-type) {
         margin-right: 33px;
     }
 }
 .footerCredit {
-    background-color: $red;
+    background-color: $accent;
     text-align: center;
     color: $white;
     padding: 15px 0;

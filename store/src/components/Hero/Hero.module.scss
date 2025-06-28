@@ -30,7 +30,7 @@
     button {
         width: 180px;
         text-transform: uppercase;
-        @include buttons($red);
+        @include buttons($accent);
     }
     @media screen and (min-wdith: $laptop) {
         padding: 0;

@@ -55,7 +55,7 @@
         font-weight: 400;
     }
     button {
-        @include buttons($red);
+        @include buttons($accent);
         width: 150px;
         text-transform: uppercase;
         font-weight: 500;
@@ -93,7 +93,7 @@
         font-family: $bodyFont;
         font-size: clamp(1rem, 2.5vw, 1.17rem);
         font-weight: 600;
-        color: $red;
+        color: $accent;
         text-transform: uppercase;
     }
     p {
@@ -118,7 +118,7 @@
         font-weight: 700;
     }
     span:nth-child(1) {
-        color: $red;
+        color: $accent;
         text-transform: uppercase;
     }
 }
@@ -126,7 +126,7 @@
     width: 100%;
     font-weight: 700;
     margin: 30px 0 20px auto;
-    @include buttons($red);
+    @include buttons($accent);
 }
 .quantity {
     @include quantityBtn;

@@ -25,10 +25,10 @@
         }
     }
     a {
-        color: $red;
+        color: $accent;
     }
     button {
-        @include buttons($red);
+        @include buttons($accent);
     }
     @media screen and (min-width: $laptop) {
         padding: 50px;

@@ -2,16 +2,27 @@
 $headingFont: 'Playfair Display', serif;
 $bodyFont: 'Inter', sans-serif;
 
-/* Colors */
-$red: #BA4D4A;
-$cream: #FEFAF8;
-$dark-gray: #797979;
-$light-gray: #EAE8E7;
+/* Color Theme */
+$primary-light: #FFFBDE;
+$primary: #91C8E4;
+$secondary: #749BC2;
+$accent: #4682A9;
+
+/* Old Colors (commented out for reference) */
+// $red: #BA4D4A;
+// $cream: #FEFAF8;
+// $dark-gray: #797979;
+// $light-gray: #EAE8E7;
+// $white: #FFFFFF;
+// $black: #000000;
+// $text-gray: #6A6A6A;
+// $lines-color: #D6D6D6;
+// $gradient: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, $white 100%);
+
 $white: #FFFFFF;
 $black: #000000;
-$text-gray: #6A6A6A;
-$lines-color: #D6D6D6;
-$gradient: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, $white 100%);
+$gradient: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, $primary-light 100%);
+$cream: $primary-light;
 
 /* Devices */
 $mobileS: '320px';
@@ -21,6 +32,11 @@ $tablet: '768px';
 $laptop: '1024px';
 $laptopL: '1440px';
 $desktop: '2560px';
+
+$lines-color: $secondary;
+$text-gray: $secondary;
+$light-gray: $primary-light;
+$dark-gray: $secondary;
 
 @mixin logoIcon($w: 36px, $h: 36px, $color) {
     display: flex;
@@ -49,7 +65,7 @@ $desktop: '2560px';
     border: 0;
     padding: 10px 8px;
     cursor: pointer;
-    @if $bgColor == $red {
+    @if $bgColor == $accent {
         color: $white
     } @else {
         color: $black;

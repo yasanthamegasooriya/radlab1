@@ -68,7 +68,7 @@
     }
     button {
         width: 100%;
-        @include buttons($red);
+        @include buttons($accent);
         text-transform: capitalize;
         font-weight: 800;
     }
@@ -80,7 +80,7 @@
     display: none;
     a {
         &:hover {
-            color: $red;
+            color: $accent;
         }
     }
     @media screen and (min-width: $laptop) {
@@ -95,10 +95,10 @@
     gap: 10px;
 }
 .navLogo {
-    @include logoIcon($color: $red);
+    @include logoIcon($color: $accent);
 }
 .navLogoName {
-    @include logoName(1.3rem, 1.875rem, $red);
+    @include logoName(1.3rem, 1.875rem, $accent);
 }
 
 .leftLinks {
@@ -106,7 +106,7 @@
         display: none;
         cursor: pointer;
         &:hover {
-            color: $red;
+            color: $accent;
         }
     }
     @media screen and (min-width: $laptop) {
@@ -133,7 +133,7 @@
     width: 20px;
     height: 20px;
     font-size: 0.5rem;
-    background-color: $red;
+    background-color: $accent;
     border-radius: 100vmax;
     position: absolute;
     left: 12px;
